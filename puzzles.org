@@ -18,17 +18,99 @@ with only 2 weights!
   and the sum of the rest of the digits is 16? Write elisp code with and without
   loops to verify your answer.
 *** Rephrase
+#+begin_note
+
+#+end_note
 *** Approach
+#+begin_note
+179
+188
+
+197
+719
+791
+818
+881
+917
+971
+
+
+1079
+1088
+
+1259
+1268
+1277
+
+1349
+1358
+1367
+
+10259
+10268
+10277
+10349
+10358
+10367
+
+12239
+12248
+12257
+12266
+
+12338
+12347
+12356
+
+12446
+12455
+
+12527
+
+13229
+
+
+
+
+
+limit number
+122 222 222
+
+
+
+
+#+end_note
 *** Solution
+#+BEGIN_SRC elisp
+(let* ((all (number_sequence 1 1000000))
+      (all with 1
+#+END_SRC
 *** Proof
 ** TODO TME
   Sequences can be non-numeric as well. What is the pattern for this sequence?
 : [m b w y me be wi yo met bew ith you meta bewi thyo uati metap bewit hyoua tirel]
   How long can it continue?
 *** Rephrase
+#+begin_note
+How many items can be in the sequence. Assuming you are only using the english 
+alphebet.
+#+end_note
 *** Approach
+#+begin_note
+Every four items they increase a letter without reusing a letter. however who knows what it will do once it reaches 26. therefore we can assum that there ar 4 with 1 leter 4 with 2 letters and so on.
+therefore 4*26 is the
+#+end_note
 *** Solution
+#+begin_note
+104
+#+end_note
 *** Proof
+#+begin_src elisp
+(+ 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4)
+#+end_src
+
+#+RESULTS:
+: 104
 
 ** TODO WRA
   Why is the sum of the reciprocals of the powers of two scaled by which power

@@ -8,19 +8,107 @@ NOTE: Comment your code, and verify it works for "breaking cases" i.e. 0! = 1.
 
 * Factorial Code
 ** Code
-#+BEGIN_SRC emacs-lisp
-(+ 2 3 4)
+#+BEGIN_SRC emacs-lisp :results silent
+(defun ! (x)
+       (setq nums (number-sequence 1 x 1))
+       (apply '* nums))
 #+END_SRC
+
+#+BEGIN_SRC elisp
+(! 0)
+#+END_SRC
+
+#+RESULTS:
+: 1
+
+
+#+BEGIN_SRC elisp
+(! 1)
+#+END_SRC
+
+#+RESULTS:
+: 1
+
+
+#+BEGIN_SRC elisp
+(! 3)
+#+END_SRC
+
+#+RESULTS:
+: 6
+
+
+#+BEGIN_SRC elisp
+(! 10)
+#+END_SRC
+
+#+RESULTS:
+: 3628800
+
+
+#+BEGIN_SRC elisp
+(! 15)
+#+END_SRC
+
+#+RESULTS:
+: 1307674368000
+
+
+#+BEGIN_SRC elisp
+(! 19)
+#+END_SRC
+
+#+RESULTS:
+: 121645100408832000
+
+
+
+
 ** Test cases
+   0 through 19 work fine and give you the right number.
 ** How big a number will make your computer freeze?
+   I don't know about freezing but when it gets up to 100 it will give you zero.
+   and past 20 it gives you incorrect values.
 * "Real-World" function with mapcar
 ** What is mapcar
-** Code
+#+begin_note
+It apears as though mapcar is a way to loop through a list of numbers. This 
+seema restricted to sequences though. specifically it is similar to apply in the
+sence that it applies the function to every number in the list.
+#+end_note
+** TODO Code
 #+BEGIN_SRC emacs-lisp
+(let* (( all (list 1 2 3 4 5))
+      (numbers (mapcar (lambda (n) (+ 1 n)) all)))
+      (list numbers))
+;(mapcar '+ '(2 4 6))
+
 
 #+END_SRC
+
+#+RESULTS:
+| 2 | 3 | 4 | 5 | 6 |
+
 * Loop function
 ** Code
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :results silent
+;(defun for (start end)
+ ; (loop for start to end
+  ;      collect (+ 1 1)))
+(defun for (start end increment fun)
+           (let* ((all (number-sequence start end increment))
+           (numbers (mapcar (lambda (n) (fun n)) all)))
+       (list numbers)))
 
 #+END_SRC
+
+#+BEGIN_SRC elisp
+(defun fun (n)
+       (if (> n 5) (list 44) (list 00)))      
+
+(for 1 10 1 'fun)
+
+#+END_SRC
+
+#+RESULTS:
+| (0) | (0) | (0) | (0) | (0) | (44) | (44) | (44) | (44) | (44) |

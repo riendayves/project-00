@@ -7,3 +7,51 @@
 NOTE: You must get this approved by Brother Benning.
 
 * Special Project
+#+beging_note
+For my project I will write a paper on George Boole.
+
+
+George Boole
+
+  Many sources inform us that he taught himself most things, most notably 
+mathematics. Being one of the most influential logician in mathematics, it is 
+impressive that he had little to no formal education. A man by the name Edward 
+Bromhead assisted in his mathematics education by supplying him books about 
+calculus which took him several years to become proficient in.
+ 
+  Looking at my own life calculus was difficult, and I believe it would be very
+difficult to teach myself all the rules and how to perform them. I think Boole 
+deserves the high praise he received just for that accomplishment alone. 
+George Boole had a large effect on modern technology. As you may have known or 
+perhaps made the connection that Boolean Algebra (the math of logic) is named 
+after George Boole. In his book The Laws of Thought, Boole presents a symbolic 
+method to logic. With this method many logic problems can be analyzed 
+mathematically which lead to many other developments. Many say that Boolean 
+Algebra lead to the information age we live in. Without Boolean Algebra the 
+technology of integrated circuits, programing languages, and computer logic 
+would not exist. The world would be very different place had these innovations 
+not been made. The access we have to information is unimaginable. For example, 
+the research I made in order to write this paper would have been impossible had 
+the innovations made by George Boole.
+
+  Boole’s research and work are very closely related to Aristotle's to the point 
+that one may question whether Boole was attempting to outdo or disprove 
+Aristotle. Boole’s intentions however we not to degrade or dismantle Aristotle's
+work. It rather to expand and improve it. He did this by putting a math based 
+symbolic language to it allowing new things to be discovered and evaluated. 
+Additionally, this helps it be more simple and mutable. Also, he widened the 
+application of this system of logic by allowing it to handle more than 2 terms 
+in it. 
+
+  Over all George Boole was a very influential logician and a brilliant 
+mathematician. One can only imagine what he would be capable of had he had 
+access to the technology of today. Learning about his life and accomplishments 
+has increased my desire to learn more on my own and apply those things daily. 
+
+#+end_note
+
+
+
+
+
+

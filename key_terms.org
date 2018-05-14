@@ -37,20 +37,22 @@ c. He levitates, he's an alien "HEELLLLLOOOO!"
 
 d. Why do I care about Superman again, he's in the D.C. universe ... so dark and terrible movies!
 
+statment = p \rightarrow q
+
 Contrapositive
-
+~q \rightarrow ~p
 Converse
-
+q \rightarrow p
 inverse
-
+~p \rightarrow ~q
 R: real numbers
-
+All numbers that are not imaginary
 Z: integers
-
+Any number without a decimal or fraction.
 Q: rational numbers
-
+Numbers that can be displayed as a fraction. not numbers like π or e
 predicate
-
+Functions that return a boolian value
 Domain
 
 CoDomain
@@ -58,71 +60,89 @@ CoDomain
 quantifier
 
 antecedent
-
+The p in our above statement. Also known as the hypothese.
 consequent
-
+The q in our above statement. also know as the conclusion.
 Set
-
+A collection of objects, numbers, or words.
 Fallacy
-
+Someting that is not logically equivalent. 
 biconditional
-
+Similar to the logic XOR and iff. true when p and q are the same but false when
+the are different.
 sufficient condition
-
+the apearance of a true antecedent allows the antecedent to be true but doesnt 
+have to be.
 necessary condition
-
+The cosequent impplies the apearance of a true antecedent.
 ~p
-
+not p
 p ^ q
-
+p and q
 p V q
-
-P XOR q
-
+p or q
+p XOR q
+p only if q
 p == q
-
+p is equivalent to q
 p -> q
-
-P <--> q
-
+id p then q
+p <--> q
+p only if q, bi conditional
 Three dots in a triangle
-
+Therefore
 upside down A
-
+All
 Backwards E
-
+There exsists
 union
-
+Or
 intersection
-
+And
 Commutative laws
-
+a + b = b + a
 associative laws
-
+(a+b)+c = a+(b+c)
 distributive laws
-
-identy laws
-
+a(b+c) = ab + ac
+identity laws
+a + 0 = a
+b * 1 = b
 negation laws
-
+~1 = 0
+~0 = 1
 double negative law
-
+~(~a) = a
 idempotent laws
-
+a + a = a
+b * b = b
 universal bound laws
-
+a + 1 = 1
+b * 0 = 0
 De morgan's laws
-
-absoption laws
-
+~(a + b) = ~a * ~b
+~(c * d) = ~c + ~d
+absorption laws
+a + (b * a) = a
 negations of t and c
-
+~t = 0
+~c = 1
 vacuously true
-
+all blue balls are small is true when there are no blue balls in the set.
 Modus Ponens
-
+p \rightarrow q
+p
+\therefore q
 Modus Tollens
-
+p \rightarrow q
+~q
+\therefore ~p
 Elimination: valid argument form
-
+p v q
+~q
+\therefore p
 Transitivity: Valid Argument form
+p \rightarrow q
+q \rightarrow r
+\therefore p \rightarrow r
+

@@ -14,6 +14,9 @@
   (let ((a 1) (b 2) (c 3)) (+ a b c))
 #+END_SRC
 
+#+RESULTS:
+: 6
+
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) (+ a b c d))
 #+END_SRC
@@ -22,20 +25,43 @@
   (let ((a 1) (b 2) (c 3)) [+ a b c d])
 #+END_SRC
 
+#+RESULTS:
+: [+ a b c d]
+
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3) (+ 4)) (+ a b c +))
 #+END_SRC
+
+#+RESULTS:
+: 10
 
 #+BEGIN_SRC emacs-lisp
   (makunbound 'a)
   (let ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
 
+#+RESULTS:
+: 12
+
 #+BEGIN_SRC emacs-lisp
   (let* ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
 
+#+RESULTS:
+: 11
+
 ***  Your answer goes here.
+#+begin_note
+In the first one I predicted exsactluy what it did. It seems obvious though and 
+understandable
+In the second one I suspected that it would ignore d and just evaluate the 
+numbers for a b and c.
+In the third I thought it would give me the same error message and the one 
+above but rather it displayed the whole thing. i guess brackets just display 
+when parenthasis evaluate.
+
+
+#+end_note
 ** TODO TEJ
   A function-as-association between elements of a domain and elements of a
   codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
@@ -58,6 +84,9 @@
   (lookup-rgb "blue")
 #+END_SRC
 
+#+RESULTS:
+(0 0 255)
+
 : (0 0 255)
 
   What if the color name is not in the alist?
@@ -65,6 +94,9 @@
 #+BEGIN_SRC emacs-lisp :results raw
   (lookup-rgb "grue")
 #+END_SRC
+
+#+RESULTS:
+nil
 
 : nil
 
@@ -93,6 +125,8 @@
      }
   }
 #+END_SRC
+
+#+RESULTS:
 
 : one : red
 : three : green
@@ -127,6 +161,12 @@
     (maphash (lambda (key value) (princ (format "%s : %s\n" key value))) mymap))
 #+END_SRC
 
+#+RESULTS:
+: ("red" "blue" "green")
+: one : red
+: two : blue
+: three : green
+
 : ("red" "blue" "green")
 : one : red
 : two : blue
@@ -136,6 +176,13 @@
   =make-hash-table= call?
   
 *** Your answer goes here.
+#+begin_note
+It displays the map before anything is actually in it. Whereas if you include 
+them than it fills the map and then displays the contents.
+#+end_note
+
+
+  
 ** TODO TER
   This exercise explores /looping/ versus /mapping/.
 
@@ -151,8 +198,20 @@
   Note the quotes:
 
 #+BEGIN_SRC emacs-lisp :results raw
-  (morphify (quote downcase) (quote ("THIS" "IS" "TOO" "LOUD")))
+  (morphify (quote downcase)  (quote ("THIS" "IS" "TOO" "LOUD")))
 #+END_SRC
+
+#+RESULTS:
+(this)
+(this)
+()
+(this)
+(this)
+nil
+(this is too loud)
+( is too loud)
+(this is too loud)
+(this is too loud)
 
   The =morphify= function is essentially a /mapping/ function, which means it
   takes a passed-in function (=fun=) and a passed-in list (=lst=), and /maps fun
@@ -163,7 +222,7 @@
   Another way is /recursively/, as in:
 
 #+BEGIN_SRC emacs-lisp :results silent
-  (defun morphifyr (fun lst)
+  (defun morphify (fun lst)
     (if (null lst)
         nil
       (append (list (funcall fun (first lst))) (morphifyr fun (rest lst)))))
@@ -172,6 +231,12 @@
   Explain how this version of =morphify= works.
   
 *** Your answer goes here.
+#+begin_note
+  I didnt change anything but the second morpHify function doesnt work but I 
+think it is supposed to work by appending together several lists by recalling 
+itself until it gets a nil list.
+#+end_note
+
 ** TODO TGE
   Note the difference if -13 is used instead of 13 below:
 #+BEGIN_SRC emacs-lisp :results silent
@@ -186,16 +251,34 @@
     (list number floor1 floor2))
 #+END_SRC
 
+#+RESULTS:
+(3.25 3 3.0)
+
 : (3.25 3 3.0)
+
+
+#+begin_src elisp
+(mod 14 4)
+#+end_src
+
+#+RESULTS:
+: 2
 
   Is the hard way correct?
   
 *** Your answer goes here.
+#+BEGIN_note
+yes it is correct because they pretty much just subtract the remainder. 
+#+END_note
+
+
 ** TODO THP
   Graph the floor and ceiling functions f(x) = \lfloor{}x\rfloor and f(x) = \lceil{}x\rceil for real
   number values of x in the interval [-5.0 .. 5.0].
   
 *** Your answer goes here.
+
+
 ** TODO WKM
   Which of these statements about floor and ceiling are correct, for any real
   number $x$ and any integers $n$ and $m$?
@@ -213,6 +296,23 @@
       0$ as in statement 8).
   
 *** Your answer goes here.
+#+begin_note
+1, 2, 3, 4, 5, 6, 7, 9
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 7/2 = 3.5, 4+3=7 valid
+7. 7/2 = 3.5 \rightarrow 3, 8/2 = 4 \rightarrow 4 4+3=7 valid
+   6/2 = 3 \rightarrow 3, 7/2 = 3.5 \rightarrow 3, 3+3=6
+8. 7/2 = 3.5 \rightarrow 4, 8/2 = 4 \rightarrow 4 4+4\ne8    invalid
+9. (5+2)/2 = 3.5 \rightarrow 3, (5-2+1)/2 = 2, 2+3=5 valid 
+10. (5+2)/2 = 3.5 \rightarrow 4, (5-2+1)/2 = 2, 4+2\ne5 invalid
+
+all work except 8 and 10.
+#+end_note
 ** TODO TIW
 
   Define the function \ldquo{}round to nearest integer\rdquo using the floor and ceiling
@@ -220,10 +320,37 @@
   fractional part is less than one-half should be rounded down, otherwise up.)
 
 ***  Your answer goes here.
+#+BEGIN_note
+\lfloor{}x + 1/2\rfloor
+#+END_note
 ** TODO TKG
   Explore the inverse of =assoc= via the functions =rassoc= and associates.
 
 ***  Your answer goes here.
+#+BEGIN_SRC elisp :results silent
+(defun lookup-rgb (color-name)
+    (rest (rassoc color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+(lookup-rgb "blue")
+#+END_SRC
+
+#+RESULTS:
+nil
+(0 0 55)
+nil
+(0 0 255)
+(0 0 255)
+
+
+#+BEGIN_note
+It apears as though it does not associate the word with the information and it 
+infact takes away the information and replaces it with a nil character.
+#+END_note
+
+
 ** TODO WOV
   Identify the formula or rule that generates the terms of each sequence:
   1. =[7 14 21 28 35 42 49 56 63 70 ...]=
@@ -238,6 +365,19 @@
   10. =[2 3 5 7 11 13 17 19 23 29 ...]=
 
 ***  Your answer goes here.
+#+BEGIN_note
+1. 7x+7
+2. 4x+7
+3. T_(n-1)+n where t_0 = 3
+4. Binary number sequence. 1 2 3 4 ...
+5. Fibinachi sequent T_(n-2)+T_(n-1)
+6. 
+7. T_(n-2)+T_(n-1) using T_(0-2) = 3 and T_(0-1) = -1 to begin. Similar ti the fibinachi 
+   sequence
+8. (2^n)*6
+9. (3^n)*6
+10. Fibinachi startin at 2 (T_(n-2)+T_(n-1) using T_(0-2) = 1 and T_(0-1) 1 to begin)
+#+END_note
 ** TODO WQW
   Classify the following lisp functions according as each is or is not a predicate:
   | Predicate? | Yes or No? |
@@ -253,3 +393,23 @@
   | =oddp=     |            |
 
 ***  Your answer goes here. (Replicate the above table.)
+| Predicate? | Yes or No? |
+|------------+------------|
+| =list=     | no         |
+| =listp=    | yes        |
+| =integerp= | yes        |
+| =vector=   | no         |
+| =vectorp=  | yes        |
+| =symbolp=  | yes        |
+| =zerop=    | yes        |
+| =evenp=    | yes        |
+| =oddp=     | yes        |
+
+
+#+BEGIN_SRC elisp :results raw
+(listp 2)
+#+END_SRC
+
+#+RESULTS:
+nil
+
